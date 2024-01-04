@@ -1,12 +1,10 @@
-import PropTypes from 'prop-types';
+import { Wrapper } from "./Filter.styled"
 
-export const Filter = ({ onSearch, filterValue }) => {
-    return <label className="mb-2 flex flex-col items-center gap-2">Find contacts by name
-        <input value={filterValue} type="text" onChange={(e) => onSearch(e.target.value)} className="rounded-lg pl-2 text-black"></input>
-    </label>
+export const Filter = ({filter, filterchange}) => {
+    return (
+        <Wrapper>
+      <label htmlFor="Filter">Find contacts by name</label>
+      <input type="text" name="Filter" value={filter} onChange={filterchange} />
+      </Wrapper>
+    )
 }
-
-Filter.propTypes = {
-   onSearch: PropTypes.func.isRequired,
-   filterValue: PropTypes.string.isRequired,
-};
